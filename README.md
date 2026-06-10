@@ -2,13 +2,13 @@
 # Day 10 Lab: Data Pipeline & Data Observability
 
 **Student Email:** email@example.com
-**Name:** (Dien ten cua ban)
+**Name:** Bap Non Vo Dich
 
 ---
 
 ## Mo ta
 
-(Mo ta ngan gon bai lab va nhung gi ban da lam)
+Da hoan thanh viet script `solution.py` cho ETL pipeline (bao gom Extract file JSON, Validate gia va danh muc, Transform gia giam 10% va chuan hoa danh muc, Load vao file CSV). Da chay thu mo phong RAG agent cho thay du lieu "rac" se khien agent dua ra cau tra loi vo ly hoac gap loi he thong.
 
 ---
 
@@ -26,7 +26,8 @@ python solution.py
 
 ### Chay Agent Simulation (Stress Test)
 ```bash
-# Mo ta cach ban chay thi nghiem Clean vs Garbage data
+# De chay simulation voi Clean data (processed_data.csv) va Garbage data (garbage_data.csv), chay lenh:
+python agent_simulation.py
 ```
 
 ---
@@ -44,4 +45,7 @@ python solution.py
 
 ## Ket qua
 
-(Tom tat ket qua: bao nhieu records da xu ly, bao nhieu bi loai, v.v.)
+Da doc tong cong 5 records tu `raw_data.json`.
+Sau qua trinh Validate, 2 records bi loai (do price am/bang 0 hoac category rong).
+Pipeline da transform va luu thanh cong 3 records hop le vao `processed_data.csv`.
+Agent Simulation hoat dong on dinh voi `processed_data.csv` va hoat dong sai lech hoan toan voi `garbage_data.csv` (Agent dua ra san pham Phone voi muc gia $abc).
